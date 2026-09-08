@@ -1,0 +1,15 @@
+video_id,filename,camera_id,recording_start,recording_end,timestamp_source,timestamp_confidence,session_id,session_type,domain,overlap_group_id,canonical_video_id,duration_s
+vid_033157e2c19c,WhatsApp Video 2026-09-01 at 12.08.31.mp4,side_01,2026-08-28 07:51:57,2026-08-28 07:56:57.845,manual,1.0,side_01_20260828_morning,morning,daylight,ovl_vid_033157e2c19c,vid_033157e2c19c,300.845
+vid_628acc3caae0,WhatsApp Video 2026-09-01 at 12.08.32.mp4,side_01,2026-08-28 14:16:16,2026-08-28 14:21:16.845,manual,1.0,side_01_20260828_afternoon,afternoon,daylight,ovl_vid_628acc3caae0,vid_628acc3caae0,300.845
+vid_8e98da6ae243,WhatsApp Video 2026-09-01 at 12.29.45.mp4,side_01,2026-08-25 15:45:18,2026-08-25 15:50:18.845,manual,1.0,side_01_20260825_afternoon,afternoon,daylight,ovl_vid_8e98da6ae243,vid_8e98da6ae243,300.845
+vid_9047c84f8c99,WhatsApp Video 2026-09-01 at 12.30.20.mp4,side_01,2026-08-25 07:59:32,2026-08-25 08:04:30.858,manual,1.0,side_01_20260825_morning,morning,daylight,ovl_vid_9047c84f8c99,vid_9047c84f8c99,298.858333
+vid_1823f226053f,WhatsApp Video 2026-09-01 at 12.43.20.mp4,side_01,2026-08-24 15:56:19,2026-08-24 16:01:19.845,manual,1.0,side_01_20260824_afternoon,afternoon,daylight,ovl_vid_1823f226053f,vid_1823f226053f,300.845
+vid_ed1b0d909924,WhatsApp Video 2026-09-01 at 12.55.25.mp4,side_01,2026-08-27 15:42:28,2026-08-27 15:47:28.845,manual,1.0,side_01_20260827_afternoon,afternoon,daylight,ovl_vid_ed1b0d909924,vid_ed1b0d909924,300.845
+vid_38862e2dd5db,WhatsApp Video 2026-09-01 at 13.06.30.mp4,side_01,2026-08-13 00:38:57,2026-08-13 00:43:31.857,manual,1.0,side_01_20260813_night,night,night,ovl_vid_38862e2dd5db,vid_38862e2dd5db,274.857789
+vid_7c506e4a451b,WhatsApp Video 2026-09-01 at 13.09.54.mp4,side_01,2026-08-14 00:17:04,2026-08-14 00:22:04.843,manual,1.0,side_01_20260814_night,night,night,ovl_vid_7c506e4a451b,vid_7c506e4a451b,300.843944
+vid_e2b59d770f3b,WhatsApp Video 2026-09-01 at 13.20.53.mp4,side_01,2026-08-13 15:47:04,2026-08-13 15:52:04.843,manual,1.0,side_01_20260813_afternoon,afternoon,daylight,ovl_20260813_1547,vid_e2b59d770f3b,300.843944
+vid_114d48902e5b,WhatsApp Video 2026-09-01 at 13.25.45.mp4,side_01,2026-08-26 15:47:08,2026-08-26 15:52:08.843,manual,1.0,side_01_20260826_afternoon,afternoon,daylight,ovl_vid_114d48902e5b,vid_114d48902e5b,300.843944
+vid_eef4a44f4b99,WhatsApp Video 2026-09-01 at 13.29.25.mp4,side_01,2026-08-13 15:47:21,2026-08-13 15:52:21.843,manual,1.0,side_01_20260813_afternoon,afternoon,daylight,ovl_20260813_1547,vid_e2b59d770f3b,300.843944
+vid_c5063a14a0f4,WhatsApp Video 2026-09-01 at 13.34.20.mp4,side_01,2026-08-10 16:09:49,2026-08-10 16:14:49.843,manual,1.0,side_01_20260810_afternoon,afternoon,daylight,ovl_vid_c5063a14a0f4,vid_c5063a14a0f4,300.843944
+vid_247b0b860059,WhatsApp Video 2026-09-01 at 13.39.56.mp4,side_01,2026-08-19 15:41:41,2026-08-19 15:43:06.955,manual,1.0,side_01_20260819_afternoon,afternoon,daylight,ovl_vid_247b0b860059,vid_247b0b860059,85.955
+vid_2b7da40e32a4,WhatsApp Video 2026-09-01 at 13.58.04.mp4,side_01,2026-08-20 15:32:30,2026-08-20 15:37:31.843,manual,1.0,side_01_20260820_afternoon,afternoon,daylight,ovl_vid_2b7da40e32a4,vid_2b7da40e32a4,301.843944

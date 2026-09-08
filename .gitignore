@@ -1,0 +1,37 @@
+.venv/
+.venv-dlc/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+.DS_Store
+
+# Derived/regenerable experiment output and real farm data -- not source code.
+runs/
+data/
+backups/
+handoff/
+timestamp_crops/
+timestamp_crops.zip
+cow_reid_handoff.zip
+models/
+
+# Raw farm footage -- large, not needed to run the model, kept off GitHub.
+*.mp4
+*.MP4
+çiftlik kayıtları/
+
+# Public pretrained checkpoints -- fetch these instead of committing them:
+#   cow-reid download-cattle-weights   (OpenCows2020)
+#   yolo11n-seg.pt is auto-downloaded by ultralytics on first run
+weights/opencows2020_softmaxrtl.pkl
+yolo11n-seg.pt
+
+# Farm-specific checkpoints: everything under weights/ is excluded by default,
+# except the one current, working checkpoint (un-ignored below) tracked via
+# Git LFS. Superseded/experimental variants and the known-leaky legacy
+# checkpoint stay local only -- see weights/README.md.
+weights/*.pt
+weights/*.pth
+weights/backups/
+weights/ablation/*.pt
+!weights/ablation/20260907_stage_a_torchvision_finetune.pt

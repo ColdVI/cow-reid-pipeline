@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cow-tracklet-reid"
+version = "1.0.0"
+description = "Tracklet-based cattle identification from fixed milking-parlor video"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.0",
+  "opencv-python-headless>=4.9",
+  "Pillow>=10",
+  "PyYAML>=6",
+  "scikit-learn>=1.4",
+  "scipy>=1.11",
+]
+
+[project.optional-dependencies]
+deep = [
+  "torch>=2.2",
+  "torchvision>=0.17",
+  "ultralytics>=8.3",
+  "lap>=0.5.12",
+]
+ui = ["streamlit>=1.63"]
+db = ["psycopg[binary]>=3.2"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+cow-reid = "cow_reid.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["cow_reid*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

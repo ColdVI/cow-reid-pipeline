@@ -1,0 +1,90 @@
+inventory:
+  video_glob: "*.mp4"
+  ocr_timestamp: true
+
+extract:
+  # yolo: recommended; motion: fully offline fixed-camera fallback
+  backend: yolo
+  # Ultralytics downloads this on first use; a licensed local copy may also be
+  # placed at weights/yolo11n-seg.pt.
+  model: yolo11n-seg.pt
+  cow_class: 19
+  sample_fps: 5.0
+  imgsz: 768
+  confidence: 0.16
+  nms_iou: 0.10
+  device: auto
+
+  # Normalized [x1, y1, x2, y2]. Tuned for Yuruyus_2_karsi.
+  roi: [0.0, 0.22, 1.0, 0.80]
+  gate: [0.18, 0.82]
+  orientation: left_to_right
+
+  best_frames: 12
+  min_track_samples: 8
+  min_track_span: 0.16
+  min_best_frames: 3
+  min_box_area: 0.010
+  keep_rejected: false
+  jpeg_quality: 92
+
+  motion:
+    history: 250
+    var_threshold: 28
+    min_area: 0.012
+    max_distance: 0.22
+    max_missed: 8
+
+embedding:
+  # Cattle-specific OpenCows2020 metric embedding. Download once with:
+  # cow-reid download-cattle-weights
+  backend: opencows2020
+  checkpoint: weights/opencows2020_softmaxrtl.pkl
+  batch_size: 64
+  device: auto
+  pool: quality_mean
+  allow_fallback: false
+
+splitting:
+  # Explicit train_reid split control. Leave both date lists empty to fall back
+  # to the automatic policy: hold out the single most recent *verified*
+  # recording date as validation (see training._auto_last_day_split). Dates use
+  # the manifest's recording_start (YYYY-MM-DD). A row with an unverified/
+  # unparseable date is always train-only and never eligible as a held-out day.
+  test_dates: []
+  validation_dates: []
+  # Confirmed cow_ids to hold out entirely (never train, never gallery) for an
+  # open-set test. Empty by default; wired up for the follow-up open-set
+  # evaluation phase.
+  open_set_cow_ids: []
+
+training:
+  epochs: 30
+  learning_rate: 0.00001
+  weight_decay: 0.0001
+  device: auto
+  seed: 42
+  embedding_dim: 128
+  pretrained_checkpoint: weights/opencows2020_softmaxrtl.pkl
+  require_pretrained: true
+  input_profile: opencows2020_legacy
+  metric_loss: reciprocal
+  metric_weight: 0.01
+  triplet_margin: 0.2
+  identities_per_batch: 4
+  instances_per_identity: 4
+  # torchvision: stride on the bottleneck's 3x3 conv (torchvision's default
+  # "v1.5" placement). opencows: stride on the 1x1 conv, matching the public
+  # OpenCows2020 checkpoint's original architecture. Tensor shapes are
+  # identical either way, so a mismatch between training and loading is
+  # silent unless the checkpoint's own recorded stride_layout is honored.
+  stride_layout: torchvision
+  freeze_backbone: false
+
+matching:
+  # Conservative bootstrap values: calibrate on confirmed Cow_ID validation data.
+  similarity_threshold: 0.95
+  min_margin: 0.02
+  top_k: 5
+  same_session_cannot_link: true
+  unknown_threshold: 0.95
